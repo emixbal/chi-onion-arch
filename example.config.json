@@ -1,0 +1,35 @@
+{
+    "debug": true,
+    "server": {
+        "address": 3000
+    },
+    "context": {
+        "timeout": 5
+    },
+    "jwtsecret": "supersecret",
+    "database": {
+        "driver": "postgres",
+        "host": "192.168.43.16",
+        "port": "5432",
+        "db_name": "user-service",
+        "db_user": "iqbal",
+        "db_password": "iqbal"
+    },
+    "email": {
+        "smtp_host": "smtp.example.com",
+        "smtp_port": "587",
+        "sender_email": "your-email@example.com",
+        "sender_pass": "your-email-password"
+    },
+    "emailGmail": {
+        "smtp_host": "smtp.gmail.com",
+        "smtp_port": "587",
+        "sender_email": "mail@gmail.com",
+        "sender_pass": "xxx xxx xxx xxxx"
+    },
+    "google": {
+        "redirect_url": "http://localhost:3000/v1/auth/google/callback",
+        "client_id": "client_id.google.com",
+        "client_secret": "client_secret.google.com"
+    }
+}
