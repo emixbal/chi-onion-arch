@@ -38,6 +38,7 @@ func (h *MenuHandler) List(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 	apiResponse := h.MenuUsecase.List(ctx)
 	util.ResponseJSON(ctx, w, apiResponse.Code, &apiResponse)
+	return
 }
 
 // Detail menampilkan detail menu berdasarkan ID
@@ -57,6 +58,7 @@ func (h *MenuHandler) Detail(w http.ResponseWriter, r *http.Request) {
 
 	apiResponse := h.MenuUsecase.Detail(ctx, id)
 	util.ResponseJSON(ctx, w, apiResponse.Code, &apiResponse)
+	return
 }
 
 // Insert menambahkan menu baru
@@ -82,6 +84,7 @@ func (h *MenuHandler) Insert(w http.ResponseWriter, r *http.Request) {
 
 	apiResponse := h.MenuUsecase.Insert(ctx, menu)
 	util.ResponseJSON(ctx, w, apiResponse.Code, &apiResponse)
+	return
 }
 
 // Update memperbarui data menu berdasarkan ID
@@ -119,4 +122,5 @@ func (h *MenuHandler) Update(w http.ResponseWriter, r *http.Request) {
 
 	apiResponse := h.MenuUsecase.Update(ctx, datas, id)
 	util.ResponseJSON(ctx, w, apiResponse.Code, &apiResponse)
+	return
 }
