@@ -9,7 +9,7 @@ import (
 )
 
 // ResponseJSON is a combined helper function that sets the response with a trace ID, timestamp, and writes it as JSON.
-func ResponseJSON(ctx context.Context, w http.ResponseWriter, statusCode int, resp *model.ApiResponse) {
+func ResponseJSON(ctx context.Context, w http.ResponseWriter, resp *model.ApiResponse) {
 	// Extracting trace ID from the context (if available).
 	traceIdInf := ctx.Value("requestID")
 	traceId := ""
@@ -23,7 +23,7 @@ func ResponseJSON(ctx context.Context, w http.ResponseWriter, statusCode int, re
 
 	// Setting the response headers and status code.
 	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(statusCode)
+	w.WriteHeader(resp.Code)
 
 	// Encoding the response as JSON and sending it to the client.
 	err := json.NewEncoder(w).Encode(resp)
