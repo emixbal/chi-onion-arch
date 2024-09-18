@@ -64,7 +64,7 @@ func (h *MenuHandler) Insert(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 	var menu model.Menu
 
-	form := new(request.InsertMenu)
+	form := new(request.FormInsertMenu)
 	err := helper.ParseAndValidateForm(r, form)
 	if err != nil {
 		apiResponse := model.ApiResponse{
@@ -100,7 +100,7 @@ func (h *MenuHandler) Update(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	form := new(request.UpdateMenu)
+	form := new(request.FormUpdateMenu)
 	err = helper.ParseAndValidateForm(r, form)
 	if err != nil {
 		apiResponse := model.ApiResponse{
