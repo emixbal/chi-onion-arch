@@ -31,5 +31,17 @@
         "redirect_url": "http://localhost:3000/v1/auth/google/callback",
         "client_id": "client_id.google.com",
         "client_secret": "client_secret.google.com"
+    },
+    "apple": {
+        "client_id": "client_id",
+        "client_secret": "client_secret",
+        "redirect_url": "http://localhost:3000/v1/auth/google/callback"
+    },
+    "facebook": {
+        "client_id": "client_id",
+        "client_secret": "client_secret"
+    },
+    "webapp": {
+        "auth_success_url": "http://localhost:3001/auth-success"
     }
 }
