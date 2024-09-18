@@ -23,7 +23,7 @@ func ClaimHeaderCheckMiddleware(next http.Handler) http.Handler {
 				Code:    http.StatusBadRequest,
 			}
 
-			util.ResponseJSON(ctx, w, apiResponse.Code, &apiResponse)
+			util.ResponseJSON(ctx, w, &apiResponse)
 			return
 		}
 
@@ -34,7 +34,7 @@ func ClaimHeaderCheckMiddleware(next http.Handler) http.Handler {
 				Code:    http.StatusBadRequest,
 			}
 
-			util.ResponseJSON(ctx, w, apiResponse.Code, &apiResponse)
+			util.ResponseJSON(ctx, w, &apiResponse)
 			return
 		}
 
@@ -45,7 +45,7 @@ func ClaimHeaderCheckMiddleware(next http.Handler) http.Handler {
 				Message: "Invalid X-ID format",
 				Code:    http.StatusBadRequest,
 			}
-			util.ResponseJSON(ctx, w, apiResponse.Code, &apiResponse)
+			util.ResponseJSON(ctx, w, &apiResponse)
 			return
 		}
 
